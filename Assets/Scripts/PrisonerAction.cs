@@ -117,6 +117,12 @@ public class PrisonerAction : MonoBehaviour
                 break;
             // êFó~ÇÃçsìÆ
             case "LustDice":
+                LustManager lustManager = GameObject.FindObjectOfType<LustManager>();
+                if (lustManager.HideFragResult == false)
+                {
+                    lustManager.HideFragResult = true;
+                    Debug.Log("LustPrisonerAction");
+                }
                 break;
             default:
                 break;
