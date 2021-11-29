@@ -42,6 +42,15 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject FirstCamera;
 
+    // 時計のゲージ(デフォルト)
+    private GameObject TimeCircleDefault;
+
+    // 時計のゲージ(増減用)
+    private GameObject TimeCircle;
+
+    // 時計表示をするか判断するためのフラグ
+    private bool TimeCircleFrag;
+
     private void Awake()
     {
         // 初期設定
@@ -72,6 +81,9 @@ public class GameManager : MonoBehaviour
             PrisonerActionClear = true;
             GameSceneChangeTime = 4.0f;
             FirstCamera.GetComponent<CinemachineVirtualCamera>().MoveToTopOfPrioritySubqueue();
+            TimeCircleDefault = GameObject.Find("TimeCircleDefault");
+            TimeCircle = GameObject.Find("TimeCircle");
+            TimeCircleFrag = true;
         }
     }
 
@@ -174,5 +186,12 @@ public class GameManager : MonoBehaviour
         }
         
         windowChange.SetActive(windowChangeActive);
+    }
+
+    public void TimeCircleChange ()
+    {
+        TimeCircleFrag = !TimeCircleFrag;
+        TimeCircleDefault.SetActive(TimeCircleFrag);
+        TimeCircle.SetActive(TimeCircleFrag);
     }
 }

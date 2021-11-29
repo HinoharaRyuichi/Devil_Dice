@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimerRender : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class TimerRender : MonoBehaviour
 
     // 1ŠÔ‚Ì•b”
     private float hour;
+
+    // §ŒÀŠÔ(ãŒÀ)
+    private float MaxTime;
 
     //‰æ‘œ‚ÌÅ‘å”
     private int index = 0;
@@ -28,6 +32,10 @@ public class TimerRender : MonoBehaviour
     [SerializeField]
     private GameObject SlothManager;
 
+    // TimeCircle‚ÌƒQ[ƒW
+    [SerializeField]
+    private Image TimeCircle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +43,7 @@ public class TimerRender : MonoBehaviour
         // ƒQ[ƒ€ƒŒƒxƒ‹İ’è‚â’ño‚ÌÛ‚É‚ÍÄİ’è‚ğ–Y‚ê‚È‚¢‚±‚Æ
         hour = 35.0f;
         time = hour * 6;
+        MaxTime = hour * 6;
         changeTime = 0.5f;
 
         // Retrieve all images in DIR_IMAGES
@@ -113,7 +122,7 @@ public class TimerRender : MonoBehaviour
         //06:00
         else
         {
-            index = 6;
+            // index = 6;
             if (changeTime >= 0.0f)
             {
                 changeTime -= Time.deltaTime;
@@ -123,6 +132,9 @@ public class TimerRender : MonoBehaviour
                 GameObject.Find("GameManager").GetComponent<GameManager>().GameClear();
             }
         }
+
+        var ValueTo = time / MaxTime;
+        TimeCircle.fillAmount = ValueTo;
 
         //•\¦‚·‚é‰æ‘œ‚ğØ‘Ö
         m_SpriteRenderer.sprite = m_Sprites[index];
