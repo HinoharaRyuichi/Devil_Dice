@@ -88,21 +88,6 @@ public class GreedManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log("Prisoner" + Prisoner);
-        // Debug.Log("GreedCoin" + GreedCoinNum);
-
-        /*if (GreedCoinNum < GreedCoinMaxNum)
-        {
-            if (GreedCoinAppearanceFrag)
-            {
-                GreedCoinAppearance();
-            }
-        }
-        else
-        {
-            GreedCoinAppearanceFrag = false;
-        }*/
-
         if (GreedCoinAppearanceFrag)
         {
             GreedCoinAppearance();
@@ -110,8 +95,6 @@ public class GreedManager : MonoBehaviour
 
         if (GreedPrisonerFrag)
         {
-            // Debug.Log("GreedPrisonerAction");
-            // Debug.Log("GreedGameOverWaitTime" + GreedGameOverWaitTime);
             GreedGameOver();
         }
     }
