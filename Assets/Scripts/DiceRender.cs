@@ -16,6 +16,7 @@ public class DiceRender : MonoBehaviour
 
     //探索するファイル
     const string DIR_IMAGES = "dice";
+
     //アタッチされているオブジェ
     SpriteRenderer m_SpriteRenderer;
 

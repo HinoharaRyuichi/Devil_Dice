@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GreedManager : MonoBehaviour
@@ -67,6 +68,19 @@ public class GreedManager : MonoBehaviour
     [SerializeField]
     private GameObject LustPrisoner;
 
+    //探索するファイル
+    const string DIR_IMAGES = "Coin";
+
+    //アタッチされているオブジェ
+    Image m_SpriteRenderer;
+
+    // コインの画像のゲームオブジェクト
+    [SerializeField]
+    private GameObject CoinImage;
+
+    //スプライト
+    public Sprite[] m_Sprites;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,6 +96,9 @@ public class GreedManager : MonoBehaviour
             GreedCoinUI.SetActive(GreedCoinUIActive);
             GreedIconActive = false;
             GreedIcon.SetActive(GreedIconActive);
+            m_Sprites = Resources.LoadAll<Sprite>(DIR_IMAGES);
+            m_SpriteRenderer = CoinImage.GetComponent<Image>();
+            m_SpriteRenderer.sprite = m_Sprites[GreedCoinNum];
         }
     }
 
@@ -97,6 +114,8 @@ public class GreedManager : MonoBehaviour
         {
             GreedGameOver();
         }
+
+        m_SpriteRenderer.sprite = m_Sprites[GreedCoinNum];
     }
 
     // 強欲コイン出現決定関数
