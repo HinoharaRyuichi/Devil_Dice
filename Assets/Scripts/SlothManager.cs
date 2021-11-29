@@ -75,7 +75,7 @@ public class SlothManager : MonoBehaviour
             SlothIcon.SetActive(SlothCircleUIActive);
             CameraShowNow = true;
             TimeStopFrag = false;
-            Debug.Log("CameraShowNow = " + CameraShowNow);
+            // Debug.Log("CameraShowNow = " + CameraShowNow);
         }
         
     }
@@ -139,7 +139,7 @@ public class SlothManager : MonoBehaviour
     public void SlothCircleActiveChange ()
     {
         CameraShowNow = !CameraShowNow;
-        Debug.Log("CameraShowNow = " + CameraShowNow);
+        // Debug.Log("CameraShowNow = " + CameraShowNow);
         if (CameraShowNow)
         {
             SlothCircleUIActive = false;
@@ -167,7 +167,7 @@ public class SlothManager : MonoBehaviour
     public void SlothCircleShowChange ()
     {
         SlothCircleShow = !SlothCircleShow;
-        Debug.Log("SlothCircleShow = " + SlothCircleShow);
+        // Debug.Log("SlothCircleShow = " + SlothCircleShow);
         /*if (SlothCircleShow)
         {
             if (CameraShowNow == false)
