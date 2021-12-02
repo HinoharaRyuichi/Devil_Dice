@@ -99,6 +99,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioSource GreedCoinGetSource;
 
+    //‹­—~‚ÌŸB‚ğ’¼‚·‚Æ‚«‚ÌSEÄ¶
+    [SerializeField]
+    private AudioSource PrisonRepairAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -221,5 +225,26 @@ public class AudioManager : MonoBehaviour
     public void GreedCoinGetAudioPlay()
     {
         GreedCoinGetSource.Play();
+    }
+
+    //ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½Û‚É–Â‚ç‚·ŸBC‘USE
+    public void PrisonRepairPlay()
+    {
+
+
+        //‰¹‚ª‚È‚Á‚Ä‚È‚©‚Á‚½‚ç–Â‚ç‚·
+        if (!PrisonRepairAudioSource.isPlaying)
+        {
+            //‰¹–Â‚ç‚·
+            PrisonRepairAudioSource.Play();
+        }
+
+        //‰¹‚ª–Â‚Á‚Ä‚È‚©‚Á‚½
+        else
+        {
+
+            //‰¹~‚ß‚é
+            PrisonRepairAudioSource.Stop();
+        }
     }
 }
