@@ -99,9 +99,13 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioSource GreedCoinGetSource;
 
-    //‹­—~‚ÌŸB‚ğ’¼‚·‚Æ‚«‚ÌSEÄ¶
+    //•®“{‚ÌŸB‚ğ’¼‚·‚Æ‚«‚ÌSEÄ¶
     [SerializeField]
     private AudioSource PrisonRepairAudioSource;
+
+    //‘Ó‘Ä‚ÌŸB‚Ìƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚ÌSEÄ¶
+    [SerializeField]
+    private AudioSource TimerRepairAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -231,9 +235,8 @@ public class AudioManager : MonoBehaviour
     public void PrisonRepairPlay()
     {
 
-
         //‰¹‚ª‚È‚Á‚Ä‚È‚©‚Á‚½‚ç–Â‚ç‚·
-        if (!PrisonRepairAudioSource.isPlaying)
+        if (PrisonRepairAudioSource.isPlaying == false)
         {
             //‰¹–Â‚ç‚·
             PrisonRepairAudioSource.Play();
