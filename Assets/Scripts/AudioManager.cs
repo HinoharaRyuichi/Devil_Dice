@@ -103,9 +103,13 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioSource PrisonRepairAudioSource;
 
-    //怠惰の檻のボタンを押したときのSE再生
+    //暴食への配給時のSE再生
     [SerializeField]
-    private AudioSource TimerRepairAudioSource;
+    private AudioSource IssuanceAudioSource;
+
+    //怠惰の檻のボタンを押したときのSE再生
+    //[SerializeField]
+    //private AudioSource TimerRepairAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -149,7 +153,6 @@ public class AudioManager : MonoBehaviour
     }
 
     // 暴食のSEの再生を管理する関数
-
     private void GluttonyAudioManager ()
     {
         if (GluttonyAudionActive)
@@ -242,12 +245,19 @@ public class AudioManager : MonoBehaviour
             PrisonRepairAudioSource.Play();
         }
 
-        //音が鳴ってなかった
+        //音が鳴ってたら
         else
         {
 
             //音止める
             PrisonRepairAudioSource.Stop();
         }
+    }
+
+    public void IssuancePlay()
+    {
+
+        //音鳴らす
+        IssuanceAudioSource.Play();
     }
 }

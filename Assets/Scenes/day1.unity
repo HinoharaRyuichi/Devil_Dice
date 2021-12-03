@@ -1119,7 +1119,7 @@ MonoBehaviour:
   GreedCoinPresentSource: {fileID: 217937142}
   GreedCoinGetSource: {fileID: 217937143}
   PrisonRepairAudioSource: {fileID: 217937144}
-  TimerRepairAudioSource: {fileID: 217937145}
+  IssuanceAudioSource: {fileID: 217937145}
 --- !u!4 &217937129
 Transform:
   m_ObjectHideFlags: 0
@@ -2584,11 +2584,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b5cdd13f8b0434a488a5d166e33dc2fb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 099a4768671a33842b84b0ca297e7b38, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.7
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6887,6 +6887,18 @@ MonoBehaviour:
         - m_Target: {fileID: 493300818}
           m_TargetAssemblyTypeName: FeedStackManager, Assembly-CSharp
           m_MethodName: MouseClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 217937128}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: IssuancePlay
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
