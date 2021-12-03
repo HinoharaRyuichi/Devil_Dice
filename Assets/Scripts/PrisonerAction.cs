@@ -32,8 +32,9 @@ public class PrisonerAction : MonoBehaviour
             //resultに代入
             r = dice.Result;
 
-            // day1シーンでのみやりたい処理
-            if (SceneManager.GetActiveScene().name == "day1")
+            // 怠惰の囚人がいる日のみやりたい処理
+            if (SceneManager.GetActiveScene().name == "day1" || /*SceneManager.GetActiveScene().name == "day2" ||*/
+                SceneManager.GetActiveScene().name == "day3" || SceneManager.GetActiveScene().name == "day5")
             {
                 //resultが1のとき
                 if (r == 1)
@@ -46,8 +47,8 @@ public class PrisonerAction : MonoBehaviour
                 }
             }
 
-            // day2シーンでのみやりたい処理
-            if (SceneManager.GetActiveScene().name == "day2")
+            // 怠惰の囚人がいない日のみやりたい処理
+            if (SceneManager.GetActiveScene().name == "day2" || SceneManager.GetActiveScene().name == "day4")
             {
 
                 //resultが1と2のとき

@@ -56,7 +56,8 @@ public class DiceRender : MonoBehaviour
                 //2‚Ì–Ú
                 case 2:
 
-                    if (SceneManager.GetActiveScene().name == "day1")
+                    if (SceneManager.GetActiveScene().name == "day1" || /*SceneManager.GetActiveScene().name == "day2" ||*/
+                        SceneManager.GetActiveScene().name == "day3" || SceneManager.GetActiveScene().name == "day5")
                     {
 
                         //”’‚Ì2‚Ì–Ú
@@ -75,17 +76,19 @@ public class DiceRender : MonoBehaviour
                 //3‚Ì–Ú
                 case 3:
 
-                    if (SceneManager.GetActiveScene().name == "day1" || SceneManager.GetActiveScene().name == "day2")
+                    if (SceneManager.GetActiveScene().name == "day1" || SceneManager.GetActiveScene().name == "day2" ||
+                        SceneManager.GetActiveScene().name == "day3" || SceneManager.GetActiveScene().name == "day4" || 
+                        SceneManager.GetActiveScene().name == "day5")
                     {
 
-                        //Ô‚Ì3‚Ì–Ú
+                        //”’‚Ì3‚Ì–Ú
                         index = 7;
                     }
 
                     else
                     {
 
-                        //”’‚Ì3‚Ì–Ú
+                        //Ô‚Ì3‚Ì–Ú
                         index = 2;
                     }
 
@@ -95,7 +98,8 @@ public class DiceRender : MonoBehaviour
                 case 4:
 
                     if (SceneManager.GetActiveScene().name == "day1" || SceneManager.GetActiveScene().name == "day2" ||
-                        SceneManager.GetActiveScene().name == "day3")
+                        SceneManager.GetActiveScene().name == "day3" || SceneManager.GetActiveScene().name == "day4" ||
+                        SceneManager.GetActiveScene().name == "day5")
                     {
 
                         //”’‚Ì4‚Ì–Ú
@@ -115,7 +119,8 @@ public class DiceRender : MonoBehaviour
                 case 5:
 
                     if (SceneManager.GetActiveScene().name == "day1" || SceneManager.GetActiveScene().name == "day2" ||
-                        SceneManager.GetActiveScene().name == "day3" || SceneManager.GetActiveScene().name == "day4")
+                        SceneManager.GetActiveScene().name == "day3" || SceneManager.GetActiveScene().name == "day4" ||
+                        SceneManager.GetActiveScene().name == "day5")
                     {
 
                         //”’‚Ì5‚Ì–Ú
