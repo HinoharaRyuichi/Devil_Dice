@@ -189,7 +189,19 @@ MonoBehaviour:
   - eventID: 4
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1414041260}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: ChangeScene
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: day4
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &77390986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1221,7 +1233,19 @@ MonoBehaviour:
   - eventID: 4
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1414041260}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: ChangeScene
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: day2
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &730365284
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1453,7 +1477,19 @@ MonoBehaviour:
   - eventID: 4
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1414041260}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: ChangeScene
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: day3
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &1103524769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2545,7 +2581,19 @@ MonoBehaviour:
   - eventID: 4
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1414041260}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: ChangeScene
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: day5
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &1950606264
 BoxCollider2D:
   m_ObjectHideFlags: 0
