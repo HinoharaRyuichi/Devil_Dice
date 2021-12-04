@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -51,6 +52,19 @@ public class GameManager : MonoBehaviour
     // 時計表示をするか判断するためのフラグ
     private bool TimeCircleFrag;
 
+    // 透明度を変更するパネルのイメージ
+    [SerializeField]
+    private Image FadeImage;
+
+    // パネルの色
+    private Color PanelColor;
+
+    // フェードアウトにかかる時間
+    private float Duration;
+
+    // スタートボタンの画像
+    private Image StartButton;
+
     private void Awake()
     {
         // 初期設定
@@ -61,6 +75,21 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // FadeImage = default;
+        // PanelColor = Color.black;
+        var c = FadeImage.color;
+        c.a = 0f;
+        FadeImage.color = c;
+        Duration = 1.0f;
+
+        if (SceneManager.GetActiveScene().name == "Title")
+        {
+            StartButton = GameObject.Find("StartButton").GetComponent<Image>();
+            var sbc = StartButton.color;
+            sbc.a = 1f;
+            StartButton.color = sbc;
+        }
+
         if (SceneManager.GetActiveScene().name.Contains("day"))
         {
             gulltonyImage = GameObject.Find("GulltonyGameOver");
@@ -125,9 +154,22 @@ public class GameManager : MonoBehaviour
     // シーン切り替え用の関数
     public void ChangeScene(string nextScene)
     {
+        if (SceneManager.GetActiveScene().name == "Title")
+        {
+            DOTween.ToAlpha(
+            () => StartButton.color,
+            color => StartButton.color = color,
+            0f,
+            Duration
+            );
+        }
 
-        //シーン切り替え
-        SceneManager.LoadScene(nextScene);
+        DOTween.ToAlpha(
+            ()=> FadeImage.color,
+            color => FadeImage.color = color,
+            1f, 
+            Duration
+            ).OnComplete(() => SceneManager.LoadScene(nextScene));
     }
 
     // GameOver時に呼ばれる関数
