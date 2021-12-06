@@ -27,6 +27,9 @@ public class SlothManager : MonoBehaviour
     // SlothCircleのGameObject
     private GameObject SlothCircle;
 
+    // SlothCircleのGameObject
+    private GameObject SlothCircleDefault;
+
     // SlothCircleIconのGameObject
     private GameObject SlothIcon;
 
@@ -66,12 +69,14 @@ public class SlothManager : MonoBehaviour
         {
             SlothImage = GameObject.Find("SlothCircle").GetComponent<Image>();
             SlothCircle = GameObject.Find("SlothCircle");
+            SlothCircleDefault = GameObject.Find("SlothCircleDefault");
             SlothIcon = GameObject.Find("SlothIcon");
             MouseButtonDownFlag = false;
             SlothCircleShow = false;
             SlothCircleUIActive = false;
             SlothImage.fillAmount = 0;
             SlothCircle.SetActive(SlothCircleUIActive);
+            SlothCircleDefault.SetActive(SlothCircleUIActive);
             SlothIcon.SetActive(SlothCircleUIActive);
             CameraShowNow = true;
             TimeStopFrag = false;
@@ -83,6 +88,12 @@ public class SlothManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // timeScaleが0ならその後の処理をしない
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
+
         // シーン名に単語のdayを含むシーンでのみ行う処理
         if (SceneManager.GetActiveScene().name.Contains("day") && SlothCircleShow == true)
         {
@@ -150,6 +161,7 @@ public class SlothManager : MonoBehaviour
         {
             SlothCircleUIActive = false;
             SlothCircle.SetActive(SlothCircleUIActive);
+            SlothCircleDefault.SetActive(SlothCircleUIActive);
             SlothIcon.SetActive(SlothCircleUIActive);
         }
         else
@@ -158,12 +170,14 @@ public class SlothManager : MonoBehaviour
             {
                 SlothCircleUIActive = true;
                 SlothCircle.SetActive(SlothCircleUIActive);
+                SlothCircleDefault.SetActive(SlothCircleUIActive);
                 SlothIcon.SetActive(SlothCircleUIActive);
             }
             else
             {
                 SlothCircleUIActive = false;
                 SlothCircle.SetActive(SlothCircleUIActive);
+                SlothCircleDefault.SetActive(SlothCircleUIActive);
                 SlothIcon.SetActive(SlothCircleUIActive);
             }
         }
@@ -173,15 +187,5 @@ public class SlothManager : MonoBehaviour
     public void SlothCircleShowChange ()
     {
         SlothCircleShow = !SlothCircleShow;
-        // Debug.Log("SlothCircleShow = " + SlothCircleShow);
-        /*if (SlothCircleShow)
-        {
-            if (CameraShowNow == false)
-            {
-                SlothCircleUIActive = true;
-                SlothCircle.SetActive(SlothCircleUIActive);
-                SlothIcon.SetActive(SlothCircleUIActive);
-            }
-        }*/
     }
 }

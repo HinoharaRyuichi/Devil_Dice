@@ -119,6 +119,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // timeScale‚ª0‚È‚ç‚»‚ÌŒã‚Ìˆ—‚ğ‚µ‚È‚¢
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
+
         if (windowChangeActive)
         {
             WindowChangeWaitTime -= Time.deltaTime;
@@ -164,12 +170,14 @@ public class GameManager : MonoBehaviour
             );
         }
 
+
         DOTween.ToAlpha(
-            ()=> FadeImage.color,
+            () => FadeImage.color,
             color => FadeImage.color = color,
-            1f, 
+            1f,
             Duration
             ).OnComplete(() => SceneManager.LoadScene(nextScene));
+        
     }
 
     // GameOver‚ÉŒÄ‚Î‚ê‚éŠÖ”
@@ -178,6 +186,7 @@ public class GameManager : MonoBehaviour
         GameObject.Find("PrisonerManager").SetActive(false);
         GameObject.Find("PrisonerAction").SetActive(false);
         GameObject.Find("TimerRender").SetActive(false);
+
         switch (death)
         {
             // –\H‚É‚æ‚Á‚ÄZ‚³‚ê‚½
@@ -235,5 +244,18 @@ public class GameManager : MonoBehaviour
         TimeCircleFrag = !TimeCircleFrag;
         TimeCircleDefault.SetActive(TimeCircleFrag);
         TimeCircle.SetActive(TimeCircleFrag);
+    }
+
+    // timeScale‚Ì•ÏX
+    public void TimeScaleChange ()
+    {
+        if (Time.timeScale == 1.0f)
+        {
+            Time.timeScale = 0.0f;
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+        }
     }
 }

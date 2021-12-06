@@ -45,6 +45,11 @@ public class Dice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // timeScale‚ª0‚È‚ç‚»‚ÌŒã‚Ìˆ—‚ğ‚µ‚È‚¢
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
 
         //ƒTƒCƒRƒ‚ğU‚é‚Ü‚Å‚ÌŠÔ‚ğŒ¸‚ç‚·
         DiceTime -= Time.deltaTime;

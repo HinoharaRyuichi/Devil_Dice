@@ -38,6 +38,12 @@ public class EnvyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // timeScale‚ª0‚È‚ç‚»‚ÌŒã‚Ìˆ—‚ğ‚µ‚È‚¢
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
+
         if (EnvyUIActive)
         {
             EnvyUITime -= Time.deltaTime;

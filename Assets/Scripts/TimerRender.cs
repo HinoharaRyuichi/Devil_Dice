@@ -55,6 +55,12 @@ public class TimerRender : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // timeScale‚ª0‚È‚ç‚»‚ÌŒã‚Ìˆ—‚ğ‚µ‚È‚¢
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
+
         if (SlothManager.activeSelf)
         {
             if (SlothManager.GetComponent<SlothManager>().TimeStopFragResult == false)

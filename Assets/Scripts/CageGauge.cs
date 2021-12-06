@@ -58,6 +58,12 @@ public class CageGauge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // timeScaleが0ならその後の処理をしない
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
+
         // シーン名に単語のdayを含むシーンでのみ行う処理
         if (SceneManager.GetActiveScene().name.Contains("day"))
         {

@@ -22,10 +22,14 @@ public class PrisonerAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // timeScaleが0ならその後の処理をしない
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
+
         // 一定時間ごとにサイコロの目によって行動するかを判断する
         f = dice.FragResult;
-
-        
 
         if (f)
         {
