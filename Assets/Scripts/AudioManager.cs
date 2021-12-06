@@ -99,6 +99,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioSource GreedCoinGetSource;
 
+    // 色欲のAudioSourceコンポーネント
+    [SerializeField]
+    private AudioSource LustAudioSource;
+
     //憤怒の檻を直すときのSE再生
     [SerializeField]
     private AudioSource PrisonRepairAudioSource;
@@ -108,8 +112,8 @@ public class AudioManager : MonoBehaviour
     private AudioSource IssuanceAudioSource;
 
     //怠惰の檻のボタンを押したときのSE再生
-    //[SerializeField]
-    //private AudioSource TimerRepairAudioSource;
+    [SerializeField]
+    private AudioSource TimerRepairAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -234,7 +238,14 @@ public class AudioManager : MonoBehaviour
         GreedCoinGetSource.Play();
     }
 
-    //ボタンが押された際に鳴らす檻修繕時SE
+    //色欲の赤い目時のSEを再生
+    public void LustAudioPlay()
+    {
+
+        LustAudioSource.Play();
+    }
+
+    //ボタンが押された際に鳴らす檻修繕時SEを再生
     public void PrisonRepairPlay()
     {
 
@@ -254,10 +265,23 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    //暴食檻のボタンを押したときのSEを再生
     public void IssuancePlay()
     {
 
         //音鳴らす
         IssuanceAudioSource.Play();
+    }
+
+    public void TimeRepairPlay()
+    {
+
+       TimerRepairAudioSource.Play();
+    }
+
+    public void TimeRepairStop()
+    {
+
+       TimerRepairAudioSource.Stop();
     }
 }

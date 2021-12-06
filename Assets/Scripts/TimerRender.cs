@@ -111,7 +111,7 @@ public class TimerRender : MonoBehaviour
             index = 4;
         }
 
-        //05::00
+        //05:00
         else if (time <= hour && time >= 0)
         {
 

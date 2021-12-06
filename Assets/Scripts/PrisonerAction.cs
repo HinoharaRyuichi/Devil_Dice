@@ -121,6 +121,7 @@ public class PrisonerAction : MonoBehaviour
                 LustManager lustManager = GameObject.FindObjectOfType<LustManager>();
                 if (lustManager.HideFragResult == false)
                 {
+                    GameObject.Find("AudioManager").GetComponent<AudioManager>().LustAudioPlay();
                     lustManager.HideFragResult = true;
                     Debug.Log("LustPrisonerAction");
                 }

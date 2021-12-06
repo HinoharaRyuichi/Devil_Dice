@@ -86,8 +86,19 @@ public class SlothManager : MonoBehaviour
         // シーン名に単語のdayを含むシーンでのみ行う処理
         if (SceneManager.GetActiveScene().name.Contains("day") && SlothCircleShow == true)
         {
-            if (MouseButtonDownFlag)
+            
+            if (!MouseButtonDownFlag)
             {
+
+                GameObject.Find("AudioManager").GetComponent<AudioManager>().TimeRepairPlay();
+
+                // 常にサイクルの値を0にする
+                SlothImage.fillAmount = 0;
+                SlothCircleValue = 0;
+            }
+            else
+            {
+
                 // ボタンを押している間サイクルの値を増やす
                 CircleIncrease(SlothCircleSecondValue);
                 if (SlothCircleValue >= SlothCircleMaxValue)
@@ -95,6 +106,7 @@ public class SlothManager : MonoBehaviour
                     SlothImage.fillAmount = 0;
                     SlothCircleValue = 0;
                     TimeStopFrag = false;
+                    GameObject.Find("AudioManager").GetComponent<AudioManager>().TimeRepairStop();
                     GameObject.Find("AudioManager").GetComponent<AudioManager>().PCAudioActiveChange();
                     // SlothCircleShow = false;
                     MouseButtonDownFlag = false;
@@ -102,12 +114,6 @@ public class SlothManager : MonoBehaviour
                     SlothCircleActiveChange();
                     CameraShowNow = false;
                 }
-            }
-            else
-            {
-                // 常にサイクルの値を0にする
-                SlothImage.fillAmount = 0;
-                SlothCircleValue = 0;
             }
         }
     }

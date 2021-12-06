@@ -50,13 +50,23 @@ public class LustManager : MonoBehaviour
     {
         if (HideFrag)
         {
-            if (HideTime > 0)
+
+            if (HideTime < 0)
+            {
+
+                HideFrag = false;
+                HideTime = 10.0f;
+                LustCircleHideImage.SetActive(false);
+                LustGageHideImage.SetActive(false);
+            }
+            else
             {
 
                 if (CageGage.activeSelf == false && Panel.activeSelf == false)
                 {
                     LustGageHideImage.SetActive(false);
-                } else
+                }
+                else
                 {
                     LustGageHideImage.SetActive(true);
                 }
@@ -71,14 +81,6 @@ public class LustManager : MonoBehaviour
                 }
 
                 HideTime -= Time.deltaTime;
-
-            }
-            else
-            {
-                HideFrag = false;
-                HideTime = 10.0f;
-                LustCircleHideImage.SetActive(false);
-                LustGageHideImage.SetActive(false);
             }
         }
     }
