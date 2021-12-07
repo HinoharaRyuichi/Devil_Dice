@@ -107,6 +107,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioSource PrisonRepairAudioSource;
 
+    //憤怒の檻のボタン押したときのSE用受け取りゲッタセッタ
+    public CageGauge MouseFrag;
+
     //暴食への配給時のSE再生
     [SerializeField]
     private AudioSource IssuanceAudioSource;
@@ -255,14 +258,14 @@ public class AudioManager : MonoBehaviour
     public void PrisonRepairPlay()
     {
 
-        //音がなってなかったら鳴らす
-        if (PrisonRepairAudioSource.isPlaying == false)
+        //CageGaugeスクリプトのMouseButtonFragがTrueなら
+        if (MouseFrag.MouseButtonFrag)
         {
             //音鳴らす
             PrisonRepairAudioSource.Play();
         }
 
-        //音が鳴ってたら
+        //falseなら
         else
         {
 

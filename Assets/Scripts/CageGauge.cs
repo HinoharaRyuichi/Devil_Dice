@@ -34,6 +34,13 @@ public class CageGauge : MonoBehaviour
     // cageGauge‚ÌActive
     bool cageGaugeUIActive;
 
+    // •®“{ŸBƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚½‚Æ‚«‚ÌSE‚æ‚¤ƒtƒ‰ƒO“n‚µ
+    public bool MouseButtonFrag
+    {
+        get { return this.MouseButtonDownFlag; }
+        private set { this.MouseButtonDownFlag = value; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

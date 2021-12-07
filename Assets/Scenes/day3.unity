@@ -3409,6 +3409,7 @@ MonoBehaviour:
   GreedCoinGetSource: {fileID: 482238430}
   LustAudioSource: {fileID: 482238429}
   PrisonRepairAudioSource: {fileID: 482238428}
+  MouseFrag: {fileID: 1719308345}
   IssuanceAudioSource: {fileID: 482238427}
   TimerRepairAudioSource: {fileID: 482238426}
 --- !u!1 &491104362
@@ -11286,6 +11287,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1719308345}
           m_TargetAssemblyTypeName: CageGauge, Assembly-CSharp
           m_MethodName: OnButtonExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 482238444}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PrisonRepairPlay
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
