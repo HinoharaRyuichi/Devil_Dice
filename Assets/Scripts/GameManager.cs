@@ -65,6 +65,10 @@ public class GameManager : MonoBehaviour
     // スタートボタンの画像
     private Image StartButton;
 
+    // マウスクリックの画像
+    [SerializeField]
+    private GameObject MauseClick;
+
     private void Awake()
     {
         // 初期設定
@@ -113,6 +117,7 @@ public class GameManager : MonoBehaviour
             TimeCircleDefault = GameObject.Find("TimeCircleDefault");
             TimeCircle = GameObject.Find("TimeCircle");
             TimeCircleFrag = true;
+            MauseClick.SetActive(false);
         }
     }
 
@@ -153,6 +158,11 @@ public class GameManager : MonoBehaviour
                 {
                     ChangeScene("GameClear");
                 }
+            }
+
+            if (GameSceneChangeTime <= 0)
+            {
+                MauseClick.SetActive(true);
             }
         }
     }
