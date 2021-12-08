@@ -9,6 +9,9 @@ using DG.Tweening;
 public class GameManager : MonoBehaviour
 {
 
+    //ゲームオーバー時のアニメーションを再生する画像
+    private GameObject GameOverImage;
+
     // Gulltonyによってゲームオーバーになった際に表示する画像
     private GameObject gulltonyImage;
 
@@ -96,9 +99,11 @@ public class GameManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name.Contains("day"))
         {
+            GameOverImage = GameObject.Find("GameOverAnimImage");
             gulltonyImage = GameObject.Find("GulltonyGameOver");
             angerImage = GameObject.Find("AngerGameOver");
             greedImage = GameObject.Find("GreedGameOver");
+            GameOverImage.SetActive(false);
             gulltonyImage.SetActive(false);
             angerImage.SetActive(false);
             greedImage.SetActive(false);
@@ -196,6 +201,8 @@ public class GameManager : MonoBehaviour
         GameObject.Find("PrisonerManager").SetActive(false);
         GameObject.Find("PrisonerAction").SetActive(false);
         GameObject.Find("TimerRender").SetActive(false);
+
+        GameOverImage.SetActive(true);
 
         switch (death)
         {
