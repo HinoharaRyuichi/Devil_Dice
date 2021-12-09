@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirstCamera: {fileID: 0}
   FadeImage: {fileID: 1805038504}
+  MauseClick: {fileID: 0}
 --- !u!4 &14943745
 Transform:
   m_ObjectHideFlags: 0
@@ -618,7 +619,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f4caf998e520ed5438cc43c65c8288ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 776de23bfb0b09f46a33826059c047d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
