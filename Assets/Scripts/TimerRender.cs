@@ -19,8 +19,9 @@ public class TimerRender : MonoBehaviour
 
     //探索するファイル
     const string DIR_IMAGES = "Time";
-    //アタッチされているオブジェ
-    SpriteRenderer m_SpriteRenderer;
+
+    // Image コンポーネントを格納する変数
+    private Image m_Image;
 
     //スプライト
     public Sprite[] m_Sprites;
@@ -48,8 +49,8 @@ public class TimerRender : MonoBehaviour
 
         // Retrieve all images in DIR_IMAGES
         m_Sprites = Resources.LoadAll<Sprite>(DIR_IMAGES);
-        m_SpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        m_SpriteRenderer.sprite = m_Sprites[index];
+        m_Image = gameObject.GetComponent<Image>();
+        m_Image.sprite = m_Sprites[index];
     }
 
     // Update is called once per frame
@@ -143,6 +144,6 @@ public class TimerRender : MonoBehaviour
         TimeCircle.fillAmount = ValueTo;
 
         //表示する画像を切替
-        m_SpriteRenderer.sprite = m_Sprites[index];
+        m_Image.sprite = m_Sprites[index];
     }
 }

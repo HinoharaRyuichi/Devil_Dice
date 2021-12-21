@@ -200,7 +200,7 @@ public class GameManager : MonoBehaviour
     {
         GameObject.Find("PrisonerManager").SetActive(false);
         GameObject.Find("PrisonerAction").SetActive(false);
-        GameObject.Find("TimerRender").SetActive(false);
+        GameObject.Find("TimeRender").SetActive(false);
 
         GameOverImage.SetActive(true);
 
@@ -233,7 +233,7 @@ public class GameManager : MonoBehaviour
     {
         GameObject.Find("PrisonerManager").SetActive(false);
         GameObject.Find("PrisonerAction").SetActive(false);
-        GameObject.Find("TimerRender").SetActive(false);
+        GameObject.Find("TimeRender").SetActive(false);
 
         Debug.Log("Game Clear");
         gameClear.SetActive(true);

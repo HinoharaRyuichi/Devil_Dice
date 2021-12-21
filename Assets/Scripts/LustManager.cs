@@ -6,7 +6,9 @@ public class LustManager : MonoBehaviour
 {
     // LustGageHideImageのゲームオブジェクト
     [SerializeField]
-    private GameObject LustGageHideImage;
+    private GameObject LustGageHideImage1;
+    [SerializeField]
+    private GameObject LustGageHideImage2;
 
     // LustCircleHideImageのゲームオブジェクト
     [SerializeField]
@@ -39,7 +41,8 @@ public class LustManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LustGageHideImage.SetActive(false);
+        LustGageHideImage1.SetActive(false);
+        LustGageHideImage2.SetActive(false);
         LustCircleHideImage.SetActive(false);
         HideFrag = false;
         HideTime = 10.0f;
@@ -63,18 +66,21 @@ public class LustManager : MonoBehaviour
                 HideFrag = false;
                 HideTime = 10.0f;
                 LustCircleHideImage.SetActive(false);
-                LustGageHideImage.SetActive(false);
+                LustGageHideImage1.SetActive(false);
+                LustGageHideImage2.SetActive(false);
             }
             else
             {
 
                 if (CageGage.activeSelf == false && Panel.activeSelf == false)
                 {
-                    LustGageHideImage.SetActive(false);
+                    LustGageHideImage1.SetActive(false);
+                    LustGageHideImage2.SetActive(false);
                 }
                 else
                 {
-                    LustGageHideImage.SetActive(true);
+                    LustGageHideImage1.SetActive(true);
+                    LustGageHideImage2.SetActive(true);
                 }
 
                 if (SlothCircle.activeSelf == true)

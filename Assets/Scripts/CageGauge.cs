@@ -29,10 +29,10 @@ public class CageGauge : MonoBehaviour
     float recovery;
 
     // cageGaugeUIスクリプト
-    private GameObject cageGaugeUI;
+    //private GameObject cageGaugeUI;
 
     // cageGaugeのActive
-    bool cageGaugeUIActive;
+    //bool cageGaugeUIActive;
 
     // 憤怒檻ボタンを押したときのSEようフラグ渡し
     public bool MouseButtonFrag
@@ -54,11 +54,11 @@ public class CageGauge : MonoBehaviour
         // シーン名に単語のdayを含むシーンでのみ行う処理
         if (SceneManager.GetActiveScene().name.Contains("day"))
         {
-            cageGaugeUI = GameObject.Find("CageGauge");
+            //cageGaugeUI = GameObject.Find("CageGauge");
 
             // UI関連のオブジェクトのActiveをfalseに変更
-            cageGaugeUIActive = false;
-            cageGaugeUI.SetActive(cageGaugeUIActive);
+            //cageGaugeUIActive = false;
+            //cageGaugeUI.SetActive(cageGaugeUIActive);
         }
     }
 
@@ -140,10 +140,12 @@ public class CageGauge : MonoBehaviour
         }
     }
 
+    /*
     // cageGaugeUIのActive切り替え
     public void cageGaugeUIActiveChange()
     {
         cageGaugeUIActive = !cageGaugeUIActive;
         cageGaugeUI.SetActive(cageGaugeUIActive);
     }
+    */
 }
