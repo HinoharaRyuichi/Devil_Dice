@@ -15,7 +15,7 @@ public class FeedStackManager : MonoBehaviour
     float FeedTimeOut;
 
     // feedStackのActive
-    bool feedStackUIActive;
+    //bool feedStackUIActive;
 
     // FeedStackのスクリプト
     public FeedStack feedStack;
@@ -42,9 +42,9 @@ public class FeedStackManager : MonoBehaviour
             gluttonyIconTime = 5.0f;
 
             // UI関連のオブジェクトのActiveをfalseに変更
-            feedStackUIActive = false;
+            //feedStackUIActive = false;
             feedStack.SetFeedStack(feedStackNum);
-            feedStack.feedStackUI.SetActive(feedStackUIActive);
+            //feedStack.feedStackUI.SetActive(feedStackUIActive);
         }
     }
 
@@ -97,10 +97,12 @@ public class FeedStackManager : MonoBehaviour
         } 
     }
 
+    /*
     // feedStackUIActiveの切り替え
     public void feedStackUIActiveChange()
     {
         feedStackUIActive = !feedStackUIActive;
         feedStack.feedStackUI.SetActive(feedStackUIActive);
     }
+    */
 }

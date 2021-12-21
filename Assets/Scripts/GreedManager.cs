@@ -62,7 +62,7 @@ public class GreedManager : MonoBehaviour
     private GameObject GreedIcon;
 
     // ã≠ó~ÇÃIconÇÃActive
-    private bool GreedIconActive;
+    //private bool GreedIconActive;
 
     // êFó~ÇÃé˙êl
     [SerializeField]
@@ -94,8 +94,8 @@ public class GreedManager : MonoBehaviour
             GreedCoinUIActive = false;
             GreedPrisonerFrag = false;
             GreedCoinUI.SetActive(GreedCoinUIActive);
-            GreedIconActive = false;
-            GreedIcon.SetActive(GreedIconActive);
+            //GreedIconActive = false;
+            //GreedIcon.SetActive(GreedIconActive);
             m_Sprites = Resources.LoadAll<Sprite>(DIR_IMAGES);
             m_SpriteRenderer = CoinImage.GetComponent<Image>();
             m_SpriteRenderer.sprite = m_Sprites[GreedCoinNum];
@@ -235,12 +235,14 @@ public class GreedManager : MonoBehaviour
         }
     }
 
+    /*
     // ã≠ó~ÇÃIconÇÃActiveêÿÇËë÷Ç¶
     public void GreedIconActiveChange ()
     {
         GreedIconActive = !GreedIconActive;
         GreedIcon.SetActive(GreedIconActive);
     }
+    */
 
     // GreedPrisonerFragÇÃêÿÇËë÷Ç¶
     public void GreedPrisonerFragChange ()

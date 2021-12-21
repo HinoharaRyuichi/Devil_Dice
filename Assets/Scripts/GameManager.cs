@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     private GameObject TimeCircle;
 
     // 時計表示をするか判断するためのフラグ
-    private bool TimeCircleFrag;
+    //private bool TimeCircleFrag;
 
     // 透明度を変更するパネルのイメージ
     [SerializeField]
@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
             FirstCamera.GetComponent<CinemachineVirtualCamera>().MoveToTopOfPrioritySubqueue();
             TimeCircleDefault = GameObject.Find("TimeCircleDefault");
             TimeCircle = GameObject.Find("TimeCircle");
-            TimeCircleFrag = true;
+            //TimeCircleFrag = true;
             MauseClick.SetActive(false);
         }
     }
@@ -256,12 +256,14 @@ public class GameManager : MonoBehaviour
         windowChange.SetActive(windowChangeActive);
     }
 
+    /*
     public void TimeCircleChange ()
     {
         TimeCircleFrag = !TimeCircleFrag;
         TimeCircleDefault.SetActive(TimeCircleFrag);
         TimeCircle.SetActive(TimeCircleFrag);
     }
+    */
 
     // timeScaleの変更
     public void TimeScaleChange ()
