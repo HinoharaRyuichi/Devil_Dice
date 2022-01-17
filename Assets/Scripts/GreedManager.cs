@@ -45,6 +45,30 @@ public class GreedManager : MonoBehaviour
     // 強欲のコインUIのActive
     private bool GreedCoinUIActive;
 
+    // 憤怒の檻にコインがあるときのエフェクト
+    [SerializeField]
+    private GameObject AngerPrisonCoinEffect;
+
+    // 暴食の檻にコインがあるときのエフェクト
+    [SerializeField]
+    private GameObject GluttonyPrisonCoinEffect;
+
+    // 嫉妬の檻にコインがあるときのエフェクト
+    [SerializeField]
+    private GameObject EnvyPrisonCoinEffect;
+
+    // 怠惰の檻にコインがあるときのエフェクト
+    [SerializeField]
+    private GameObject SlothPrisonCoinEffect;
+
+    // 強欲の檻にコインがあるときのエフェクト
+    [SerializeField]
+    private GameObject GreedPrisonCoinEffect;
+
+    // 色欲の檻にコインがあるときのエフェクト
+    [SerializeField]
+    private GameObject LustPrisonCoinEffect;
+
     // GreedPrisonerを動かすかのフラグ
     private bool GreedPrisonerFrag;
 
@@ -72,7 +96,7 @@ public class GreedManager : MonoBehaviour
     const string DIR_IMAGES = "Coin";
 
     //アタッチされているオブジェ
-    Image m_SpriteRenderer;
+    Image m_CoinImage;
 
     // コインの画像のゲームオブジェクト
     [SerializeField]
@@ -89,16 +113,22 @@ public class GreedManager : MonoBehaviour
             GreedCoinNum = 0;
             GreedCoinMaxNum = 9;
             Prisoner = 0;
-            GreedGameOverWaitTime = 20.0f;
+            GreedGameOverWaitTime = 30.0f;
             GreedCoinAppearanceFrag = true;
+            AngerPrisonCoinEffect.SetActive(false);
+            GluttonyPrisonCoinEffect.SetActive(false);
+            EnvyPrisonCoinEffect.SetActive(false);
+            SlothPrisonCoinEffect.SetActive(false);
+            GreedPrisonCoinEffect.SetActive(false);
+            LustPrisonCoinEffect.SetActive(false);
             GreedCoinUIActive = false;
             GreedPrisonerFrag = false;
             GreedCoinUI.SetActive(GreedCoinUIActive);
             //GreedIconActive = false;
             //GreedIcon.SetActive(GreedIconActive);
             m_Sprites = Resources.LoadAll<Sprite>(DIR_IMAGES);
-            m_SpriteRenderer = CoinImage.GetComponent<Image>();
-            m_SpriteRenderer.sprite = m_Sprites[GreedCoinNum];
+            m_CoinImage = CoinImage.GetComponent<Image>();
+            m_CoinImage.sprite = m_Sprites[GreedCoinNum];
         }
     }
 
@@ -121,7 +151,7 @@ public class GreedManager : MonoBehaviour
             GreedGameOver();
         }
 
-        m_SpriteRenderer.sprite = m_Sprites[GreedCoinNum];
+        m_CoinImage.sprite = m_Sprites[GreedCoinNum];
     }
 
     // 強欲コイン出現決定関数
@@ -131,39 +161,58 @@ public class GreedManager : MonoBehaviour
         do
         {
             Prisoner = Random.Range(1, 7);
+
             switch (Prisoner)
             {
                 case 1:
+
+                    AngerPrisonCoinEffect.SetActive(true);
+
                     if (!AngerPrisoner.activeSelf)
                     {
                         Prisoner = 0;
                     }
                     break;
                 case 2:
+
+                    GluttonyPrisonCoinEffect.SetActive(true);
+
                     if (!GluttonyPrisoner.activeSelf)
                     {
                         Prisoner = 0;
                     }
                     break;
                 case 3:
+
+                    EnvyPrisonCoinEffect.SetActive(true);
+
                     if (!EnvyPrisoner.activeSelf)
                     {
                         Prisoner = 0;
                     }
                     break;
                 case 4:
+
+                    SlothPrisonCoinEffect.SetActive(true);
+
                     if (!SlothPrisoner.activeSelf)
                     {
                         Prisoner = 0;
                     }
                     break;
                 case 5:
+
+                    GreedPrisonCoinEffect.SetActive(true);
+
                     if (!GreedPrisoner.activeSelf)
                     {
                         Prisoner = 0;
                     }
                     break;
                 case 6:
+
+                    LustPrisonCoinEffect.SetActive(true);
+
                     if (!LustPrisoner.activeSelf)
                     {
                         Prisoner = 0;
@@ -193,7 +242,6 @@ public class GreedManager : MonoBehaviour
                 GreedCoinUI.SetActive(GreedCoinUIActive);
             }
         }
-        
     }
 
     // 強欲コインを1枚ゲットする関数
@@ -202,11 +250,16 @@ public class GreedManager : MonoBehaviour
         if (GreedCoinNum < GreedCoinMaxNum)
         {
             GreedCoinNum += 1;
+            AngerPrisonCoinEffect.SetActive(false);
+            GluttonyPrisonCoinEffect.SetActive(false);
+            EnvyPrisonCoinEffect.SetActive(false);
+            SlothPrisonCoinEffect.SetActive(false);
+            GreedPrisonCoinEffect.SetActive(false);
+            LustPrisonCoinEffect.SetActive(false);
             GreedCoinAppearanceFrag = true;
             GreedCoinUI.SetActive(false);
             GameObject.Find("AudioManager").GetComponent<AudioManager>().GreedCoinGetAudioPlay();
         }
-        
     }
 
     // 強欲の囚人のゲームオーバーに関するあれこれをする関数
@@ -220,7 +273,7 @@ public class GreedManager : MonoBehaviour
         }
     }
 
-    // 強欲の囚人にコインを5枚渡す関数
+    // 強欲の囚人にコインを3枚渡す関数
     public void GreedCoinPresent ()
     {
         if (GreedPrisonerFrag)
@@ -228,7 +281,7 @@ public class GreedManager : MonoBehaviour
             if (GreedCoinNum >= 3)
             {
                 GreedCoinNum -= 3;
-                GreedGameOverWaitTime = 15.0f;
+                GreedGameOverWaitTime = 30.0f;
                 GreedPrisonerFragChange();
                 GameObject.Find("AudioManager").GetComponent<AudioManager>().GreedCoinPresentAudioPlay();
             }

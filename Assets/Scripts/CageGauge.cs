@@ -41,6 +41,10 @@ public class CageGauge : MonoBehaviour
         private set { this.MouseButtonDownFlag = value; }
     }
 
+    // インスペクターから指定
+    [SerializeField] Animator AngerIconAnime;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -118,6 +122,8 @@ public class CageGauge : MonoBehaviour
     {
         // マウスのボタンを押しているかのフラグをtrueに変更
         MouseButtonDownFlag = true;
+
+        AngerIconAnime.SetBool("IconFrag", true);
     }
 
     // マウスのボタンを離したときの処理
@@ -127,6 +133,8 @@ public class CageGauge : MonoBehaviour
         {
             // マウスのボタンを押しているかのフラグをfalseに変更
             MouseButtonDownFlag = false;
+
+            AngerIconAnime.SetBool("IconFrag", false);
         }
     }
 
@@ -137,6 +145,8 @@ public class CageGauge : MonoBehaviour
         {
             // マウスのボタンを押しているかのフラグをfalseに変更
             MouseButtonDownFlag = false;
+
+            AngerIconAnime.SetBool("IconFrag", false);
         }
     }
 

@@ -56,6 +56,9 @@ public class SlothManager : MonoBehaviour
         set { this.TimeStopFrag = value; }
     }
 
+    // インスペクターから指定
+    [SerializeField] Animator SlothIconAnime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -134,6 +137,8 @@ public class SlothManager : MonoBehaviour
     {
         // マウスのボタンを押しているかのフラグをtrueに変更
         MouseButtonDownFlag = true;
+
+        SlothIconAnime.SetBool("IconFrag", true);
     }
 
     // マウスのボタンを離したときの処理
@@ -141,6 +146,8 @@ public class SlothManager : MonoBehaviour
     {
         // マウスのボタンを押しているかのフラグをfalseに変更
         MouseButtonDownFlag = false;
+
+        SlothIconAnime.SetBool("IconFrag", false);
     }
 
     // サイクルの値を増やす関数
