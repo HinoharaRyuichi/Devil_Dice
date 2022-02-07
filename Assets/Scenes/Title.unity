@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 887973733}
   - component: {fileID: 887973734}
   m_Layer: 0
-  m_Name: StartBGM
+  m_Name: BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 1559947462}
   - component: {fileID: 1559947461}
   m_Layer: 0
-  m_Name: StartButtonSE
+  m_Name: SE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
